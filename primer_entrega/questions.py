@@ -1,21 +1,17 @@
 import random
 import string
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
-word = random.choice(words)
+categorias = {
+    "programacion": ["python", "programa", "variable", "funcion"],
+    "matematicas": ["suma", "resta", "multiplicacion", "division"],
+    "geografia": ["pais", "capital", "continente", "oceano"]
+}
 guessed = []
 attempts = 6
 puntaje = 6
 print("¡Bienvenido al Ahorcado!")
 print()
+categoria = input("Elija una categoria de palabras entre: [programacion, matematicas o geografia] ")
+word = random.choice(categorias[categoria])
 while attempts > 0:
     # Mostrar progreso: letras adivinadas y guiones para las que faltan
     progress = ""
